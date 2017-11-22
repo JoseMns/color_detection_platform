@@ -1,13 +1,14 @@
+  
 #include <Servo.h>
 
 Servo ServoJose; //Declaramos que queremos controlar un Servo, al cual le vamos a poner un nombre cualquiera
 
-int pot = 0; //El pin análogo donde va conectado el Potenciómetro
+int pot = 5; //El pin análogo donde va conectado el Potenciómetro
 int val; //El valor a leer por el puerto análogo
 
 void setup()
 {
-ServoJose.attach(9); //El pin al cual conectaremos nuestro Servo
+ServoJose.attach(8); //El pin al cual conectaremos nuestro Servo
 }
 
 void loop()
