@@ -4,6 +4,7 @@
 #define S3 7
 #define sensorOut 8
 int frequency = 0;
+int color =0;
 void setup() {
   pinMode(S0, OUTPUT);
   pinMode(S1, OUTPUT);
@@ -24,6 +25,7 @@ void loop() {
   // Reading the output frequency
   frequency = pulseIn(sensorOut, LOW);
   // Printing the value on the serial monitor
+  int R = frequency;
   Serial.print("R= ");//printing name
   Serial.print(frequency);//printing RED color frequency
   Serial.print("  ");
@@ -34,6 +36,7 @@ void loop() {
   // Reading the output frequency
   frequency = pulseIn(sensorOut, LOW);
   // Printing the value on the serial monitor
+  int G = frequency;
   Serial.print("G= ");//printing name
   Serial.print(frequency);//printing RED color frequency
   Serial.print("  ");
@@ -44,8 +47,32 @@ void loop() {
   // Reading the output frequency
   frequency = pulseIn(sensorOut, LOW);
   // Printing the value on the serial monitor
+  int B = frequency;
   Serial.print("B= ");//printing name
   Serial.print(frequency);//printing RED color frequency
   Serial.println("  ");
   delay(100);
+
+
+
+    if(R<45 & R>60 & G<90 & G>75){
+    color = 1; // Red
+    Serial.println("rojo");
+  }
+ 
+  if(R<45 & R>70 && G<40 & G<55){
+    color = 2; // Green
+    Serial.println("verde");
+  }
+
+  if (G<75 & G>95 & B<40 &B>60){
+    color = 3; // Blue
+    Serial.println("azul");
+  }
+  if (G<75 & G>95 & B<40 &B>60){
+    color = 3; // yellow
+    Serial.println("amarillo");
+  }
+  return color;  
 }
+
